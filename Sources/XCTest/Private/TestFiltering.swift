@@ -37,10 +37,10 @@ internal struct TestFiltering {
     static func filterTests(_ entries: [XCTestCaseEntry], filter: TestFilter) -> [XCTestCaseEntry] {
         return entries
             .map { testCaseClass, testCaseMethods in
-                return (testCaseClass, testCaseMethods.filter { filter(testCaseClass, $0.0) } )
+                (testCaseClass, testCaseMethods.filter { filter(testCaseClass, $0.0) } )
             }
             .filter { _, testCaseMethods in
-                return !testCaseMethods.isEmpty
+                !testCaseMethods.isEmpty
             }
     }
 }

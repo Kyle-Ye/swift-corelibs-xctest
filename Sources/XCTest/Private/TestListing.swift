@@ -52,8 +52,7 @@ private func moduleName(value: Any) -> String {
 
 extension XCTestSuite: Listable {
     private var listables: [Listable] {
-        return tests
-            .compactMap({ ($0 as? Listable) })
+        tests.compactMap{ $0 as? Listable }
     }
 
     private var listingName: String {
